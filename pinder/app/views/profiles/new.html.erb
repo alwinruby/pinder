@@ -7,6 +7,8 @@
   <%= f.text_field :owner_likes %><br><br>
   <%= f.label :owner_dislikes %>:
   <%= f.text_field :owner_dislikes %><br><br>
+  <%= f.label :owner_image %>
+  <%= f.file_field :owner_image %><br><br>
   <%= f.label :pet_name %>:
   <%= f.text_field :pet_name %><br><br>
   <%= f.label :pet_age %>:
@@ -17,5 +19,7 @@
   <%= f.text_field :pet_likes %><br><br>
   <%= f.label :pet_dislikes %>:
   <%= f.text_field :pet_dislikes %><br><br>
+  <%= f.label :pet_image %>
+  <%= f.file_field :pet_image %><br><br>
   <%= f.submit "Submit Profile" %>
 <% end %>

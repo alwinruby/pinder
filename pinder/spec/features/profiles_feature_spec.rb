@@ -25,8 +25,12 @@ feature "Profile creation" do
       fill_in "Pet species", with: "Dog - Golden Retriever"
       fill_in "Pet likes", with: "Carrots"
       fill_in "Pet dislikes", with: "Bald men"
+      page.attach_file("profile_owner_image", Rails.root + 'app/assets/images/me.jpeg')
+      page.attach_file("profile_pet_image", Rails.root + 'app/assets/images/banana.jpg')
       click_button "Submit Profile"
       expect(page).to have_content "Adam"
+      expect(page).to have_css("//img[@src*='me.jpeg']")
+      expect(page).to have_css("//img[@src*='banana.jpg']")
     end
   end
 end
