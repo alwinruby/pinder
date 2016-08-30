@@ -1,0 +1,21 @@
+<%= form_for @profile do |f| %>
+  <%= f.label :owner_name %>:
+  <%= f.text_field :owner_name %><br><br>
+  <%= f.label :owner_age %>:
+  <%= f.text_field :owner_age %><br><br>
+  <%= f.label :owner_likes %>:
+  <%= f.text_field :owner_likes %><br><br>
+  <%= f.label :owner_dislikes %>:
+  <%= f.text_field :owner_dislikes %><br><br>
+  <%= f.label :pet_name %>:
+  <%= f.text_field :pet_name %><br><br>
+  <%= f.label :pet_age %>:
+  <%= f.text_field :pet_age %><br><br>
+  <%= f.label :pet_species %>:
+  <%= f.text_field :pet_species %><br><br>
+  <%= f.label :pet_likes %>:
+  <%= f.text_field :pet_likes %><br><br>
+  <%= f.label :pet_dislikes %>:
+  <%= f.text_field :pet_dislikes %><br><br>
+  <%= f.submit "Submit Profile" %>
+<% end %>
