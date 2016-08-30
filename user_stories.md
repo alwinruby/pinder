@@ -1,6 +1,8 @@
 # User Stories
 
 ````
+MVP 1
+
 As an excited potential user of Pinder
 So I can find love for my pet(s) and I
 I want to be able to sign up for Pinder
@@ -19,6 +21,8 @@ I need to have a picture of myself already uploaded
 ````
 
 ````
+MVP 2
+
 As an overexcited registered user of Pinder
 So I can find love for my pet
 I need to see pictures of other peoples pets
@@ -35,13 +39,23 @@ As an overexcited registered user of Pinder
 Once I have matched with another pet and have seen owners picture
 I would like like the option to like or not like the owner picture.
 ````
+
 ````
+MVP 3
+
 As an overexcited registered user of Pinder
 Once I have matched with another pet owner
 I would like to be able to start a conversation
-````
-````
+
 As an overexcited registered user of Pinder
 Once I have started a conversation with another pet owner
-I have the option to unmatch with them.
+I would like to reply to them
+````
+
+````
+Bonus
+
+As an overexcited registered user of Pinder
+Once I have started a conversation with another pet owner
+I have the option to block them.
 ````
