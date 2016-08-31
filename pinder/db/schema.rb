@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160830143034) do
+ActiveRecord::Schema.define(version: 20160830155035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,8 +26,16 @@ ActiveRecord::Schema.define(version: 20160830143034) do
     t.string   "pet_likes"
     t.string   "pet_dislikes"
     t.string   "pet_species"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "owner_image_file_name"
+    t.string   "owner_image_content_type"
+    t.integer  "owner_image_file_size"
+    t.datetime "owner_image_updated_at"
+    t.string   "pet_image_file_name"
+    t.string   "pet_image_content_type"
+    t.integer  "pet_image_file_size"
+    t.datetime "pet_image_updated_at"
   end
 
   create_table "users", force: :cascade do |t|

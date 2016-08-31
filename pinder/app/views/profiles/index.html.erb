@@ -1,2 +1,18 @@
 You don't yet have a profile
-<%= link_to "Create Profile", new_profile_path %>
+<%= link_to "Create Profile", new_profile_path %><br>
+
+<% if @profiles.any? %>
+  <% @profiles.each do |profile| %>
+  <%= image_tag profile.owner_image.url(:medium) %>
+  <%= profile.owner_name %>
+  <%= profile.owner_age %>
+  <%= profile.owner_likes %>
+  <%= profile.owner_dislikes %>
+  <%= image_tag profile.pet_image.url(:medium) %>
+  <%= profile.pet_name %>
+  <%= profile.pet_age %>
+  <%= profile.pet_species %>
+  <%= profile.pet_likes %>
+  <%= profile.pet_dislikes %>
+  <% end %>
+<% end %>
