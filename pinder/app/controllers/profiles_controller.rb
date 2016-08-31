@@ -11,7 +11,9 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    Profile.create(profile_params)
+    @user = current_user
+    @profile = Profile.create(profile_params)
+    @user.profile_id = @profile.id
     redirect_to '/profiles'
   end
 
