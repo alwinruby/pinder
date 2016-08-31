@@ -1,3 +1,6 @@
-<% @profiles.each do |profile| %>
-  <%= image_tag profile.pet_image.url(:medium) %>
+<% while @profiles.any? %>
+  <%= image_tag @profiles[0].pet_image.url(:medium) %><br>
+  <%= @profiles[0].pet_name %>
+  <%= button_to "Like", new_like_path(profile)
+  <% @profiles.delete(@profiles[0]) %>
 <% end %>
