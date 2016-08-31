@@ -15,6 +15,11 @@ class ProfilesController < ApplicationController
     redirect_to '/profiles'
   end
 
+  def show
+    @profile = Profile.find(params[:id])
+    @profiles = Profile.all.to_a
+  end
+
   private
 
   def profile_params

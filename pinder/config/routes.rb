@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   root to: "profiles#index"
 
- resources :profiles
- resources :play
+  resources :profiles do
+    resources :likes
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

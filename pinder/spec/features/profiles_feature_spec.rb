@@ -43,15 +43,17 @@ feature "Playing pinder" do
   context "A user wants to play pinder" do
     scenario "A user wants to play pinder" do
       sign_up
-      visit '/'
+      create_profile
+      visit '/profiles'
       click_link "Play"
-      expect(current_path).to eq("/profiles/show")
+      expect(page).to have_content("Your name: Adam")
     end
 
-    scenario "A user sees a picture of another users pet" do
+    scenario "A user sees a picture of another user's pet" do
       sign_up
       create_profile
-      visit "/profiles/show"
+      visit "/profiles"
+      click_link "Play"
       expect(page).to have_css("//img[@src*='banana.jpg']")
     end
   end

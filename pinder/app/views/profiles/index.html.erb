@@ -16,5 +16,7 @@ You don't yet have a profile
   <%= profile.pet_species %>
   <%= profile.pet_likes %>
   <%= profile.pet_dislikes %>
+  <%= "Likes: #{profile.likes.count}" %>
+  <%= link_to "Play", profile_path(profile), method: :get %>
   <% end %>
 <% end %>

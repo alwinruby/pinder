@@ -7,5 +7,6 @@ class Profile < ActiveRecord::Base
   validates_attachment_content_type :pet_image, content_type: /\Aimage\/.*\z/
 
   belongs_to :user
+  has_many :likes
 
 end
