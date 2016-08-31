@@ -21,11 +21,13 @@ feature "Profile creation" do
       click_link "Create Profile"
       fill_in "Owner name", with: "Adam"
       fill_in "Owner age", with: "24"
+      select "Male", from: "Gender"
+      select "Straight", from: "Sexual preference"
       fill_in "Owner likes", with: "Country Music, Big Women and Folk Dancing"
       fill_in "Owner dislikes", with: "Joe Sweeny, golf and cheese"
       fill_in "Pet name", with: "Finn"
       fill_in "Pet age", with: 2
-      fill_in "Pet species", with: "Dog - Golden Retriever"
+      select "Dog", from: "Pet species"
       fill_in "Pet likes", with: "Carrots"
       fill_in "Pet dislikes", with: "Bald men"
       page.attach_file("profile_owner_image", Rails.root + 'app/assets/images/me.jpeg')

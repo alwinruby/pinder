@@ -3,6 +3,10 @@
   <%= f.text_field :owner_name %><br><br>
   <%= f.label :owner_age %>:
   <%= f.text_field :owner_age %><br><br>
+  <%= f.label :gender %>:
+  <%= f.select :gender, ["Male", "Female", "Other"] %><br><br>
+  <%= f.label :sexual_preference %>
+  <%= f.select :sexual_preference, ["Straight", "Homosexual", "Bisexual", "Other"] %><br><br>
   <%= f.label :owner_likes %>:
   <%= f.text_field :owner_likes %><br><br>
   <%= f.label :owner_dislikes %>:
@@ -14,7 +18,7 @@
   <%= f.label :pet_age %>:
   <%= f.text_field :pet_age %><br><br>
   <%= f.label :pet_species %>:
-  <%= f.text_field :pet_species %><br><br>
+  <%= f.select :pet_species, ["Dog", "Cat", "Fish", "Reptile", "Rodent", "Other"] %><br><br>
   <%= f.label :pet_likes %>:
   <%= f.text_field :pet_likes %><br><br>
   <%= f.label :pet_dislikes %>:
