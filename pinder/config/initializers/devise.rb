@@ -6,8 +6,8 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'e3b1c6afd85a4b5470a64883546af45206140e5bf63014fb775b3456544a98c3a0d6915369821ec14a97d2b5cf5daae06993646f63c947fc808615cdd9ad6c27'
-  config.omniauth :facebook, Rails.application.secrets.facebook_app_id, Rails.application.secrets.facebook_app_secret, scope: 'email'
+  # config.secret_key = 'a29b399d6c582722f00be38d3cc2a9a364ebab5d5f04a98dff7c8e7fda0b80686277bc3083491ac9883d19a113a22a37591511a1afb751f809178af3a956dd41'
+
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -108,7 +108,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'eabf490aca361867b5ca35e67e35c4d807959a3c1cbe011071ef46071de176791aec2da9eb999e14db49adedfe9e802e559274b3f3176da88f7ec820533e5247'
+  # config.pepper = '02cd49bdf7b56b6fba0653293478c4f0693f72f2610ad8c6a5a78efbcc29da2a3eefb25a5e5a9d846c06f2fcfa2318fed552378d53edbf4dbeac848b37e77aab'
 
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false

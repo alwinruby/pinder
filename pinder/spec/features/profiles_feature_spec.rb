@@ -8,10 +8,10 @@ feature "Profile creation" do
     end
 
     scenario "A user can create a profile" do
+      sign_up
       visit '/profiles'
       click_link "Create Profile"
       expect(current_path).to eq('/profiles/new')
     end
-
   end
 end

@@ -4,13 +4,13 @@ feature 'User can sign in and out' do
   context 'user not signed in and on homepage' do
     it 'should see a \'sign in\' and a \'sign up\' button' do
       visit('/')
-      expect(page).to have_button('Sign up')
-      expect(page).to have_button('Sign in')
+      expect(page).to have_link('Sign up')
+      expect(page).to have_link('Sign in')
     end
 
     it 'should not see \'sign out\' button' do
       visit('/')
-      expect(page).not_to have_button('Sign out')
+      expect(page).not_to have_link('Sign out')
     end
   end
 
@@ -26,13 +26,13 @@ feature 'User can sign in and out' do
 
     it 'should see \'sign out\' button' do
       visit('/')
-      expect(page).to have_button('Sign out')
+      expect(page).to have_link('Sign out')
     end
 
     it 'should not see a \'sign in\' button and a \'sign up\' button' do
       visit('/')
-      expect(page).not_to have_button('Sign up')
-      expect(page).not_to have_button('Sign in')
+      expect(page).not_to have_link('Sign up')
+      expect(page).not_to have_link('Sign in')
     end
 
   end
