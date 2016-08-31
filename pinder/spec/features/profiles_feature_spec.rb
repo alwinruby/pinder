@@ -8,12 +8,15 @@ feature "Profile creation" do
     end
 
     scenario "A user can create a profile" do
+      sign_up
       visit '/profiles'
       click_link "Create Profile"
       expect(current_path).to eq('/profiles/new')
     end
 
+
     scenario "A user can fill out the profile form" do
+      sign_up
       visit '/profiles'
       click_link "Create Profile"
       fill_in "Owner name", with: "Adam"
