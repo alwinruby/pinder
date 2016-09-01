@@ -1,0 +1,5 @@
+<%= "Your name: #{@profile.owner_name}" %>
+<% @profiles.each do |profile| %>
+  <%= image_tag profile.pet_image.url(:medium) %>
+  <%= button_to "Like", new_profile_like_path(profile), method: :get %>
+<% end %>

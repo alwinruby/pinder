@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20160831163657) do
+=======
 ActiveRecord::Schema.define(version: 20160831150607) do
+>>>>>>> dbcd2019dd364b53ae5f9cdede7ddc6d0718ee55
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "likes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "profile_id"
+  end
+
+  add_index "likes", ["profile_id"], name: "index_likes_on_profile_id", using: :btree
 
   create_table "profiles", force: :cascade do |t|
     t.string   "owner_name"
@@ -39,8 +51,10 @@ ActiveRecord::Schema.define(version: 20160831150607) do
     t.string   "gender"
     t.string   "sexual_preference"
     t.integer  "user_id"
+    t.integer  "like_id"
   end
 
+  add_index "profiles", ["like_id"], name: "index_profiles_on_like_id", using: :btree
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -65,6 +79,8 @@ ActiveRecord::Schema.define(version: 20160831150607) do
   add_index "users", ["profile_id"], name: "index_users_on_profile_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "likes", "profiles"
+  add_foreign_key "profiles", "likes"
   add_foreign_key "profiles", "users"
   add_foreign_key "users", "profiles"
 end
