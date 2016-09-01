@@ -3,6 +3,7 @@ require 'rails_helper'
 feature "Profile creation" do
   context "A user doesn't yet have a profile" do
     scenario "Hasn't got a profile" do
+      sign_up
       visit '/profiles'
       expect(page).to have_content("You don't yet have a profile")
     end
