@@ -1,3 +1,14 @@
+<% if @profile.errors.any? %>
+  <section id="errors" >
+    <h2> <%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved: </h2>
+    <ul>
+      <% @profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>
+
 <%= form_for @profile do |f| %>
   <%= f.label :owner_name %>:
   <%= f.text_field :owner_name %><br><br>

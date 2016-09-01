@@ -24,7 +24,7 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    
+
   end
 
   private
