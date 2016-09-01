@@ -28,3 +28,14 @@ def create_profile
   # expect(page).to have_css("//img[@src*='me.jpeg']")
   # expect(page).to have_css("//img[@src*='banana.jpg']")
 end
+
+def create_first_profile
+  Profile.create owner_name: 'Joe', owner_age: '32', gender: 'Male', sexual_preference: 'Straight', owner_likes: 'Football',
+                owner_dislikes: 'People', pet_name: 'Buddy', pet_age: 5, pet_species: 'Dog', pet_likes: 'Carrots', pet_dislikes: 'Bald men'
+
+end
+
+def create_second_profile
+  Profile.create owner_name: 'Harry', owner_age: '25', gender: 'Male', sexual_preference: 'Straight', owner_likes: 'Goats',
+                owner_dislikes: 'Alwin', pet_name: 'Dave', pet_age: 12, pet_species: 'Cat', pet_likes: 'Fish', pet_dislikes: 'Dogs'
+end

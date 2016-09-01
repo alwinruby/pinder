@@ -3,7 +3,13 @@
     You don't yet have a profile
     <%= link_to "Create Profile", new_profile_path %><br>
     <% else %>
-      <% if @profiles.any? %>
+    <br><br>
+    <%= image_tag @profiles[0].pet_image.url(:medium) %><br><br>
+    <%= @profiles[0].pet_name %>
+    <%= @profiles[0].pet_age %>
+    <%= "Likes: #{@profiles[0].likes.count}" %>
+    <%= link_to "Play", profile_path(@profiles), method: :get %>
+      <!-- <% if @profiles.any? %>
 
         <% @profiles.each do |profile| %>
         <%= image_tag profile.owner_image.url(:medium) %><br><br>
@@ -22,7 +28,7 @@
         <%= "Likes: #{profile.likes.count}" %>
         <%= link_to "Play", profile_path(profile), method: :get %>
       <% end %>
-    <% end %>
+    <% end %> -->
   <% end %>
 <% else %>
   Please sign up or sign in to use Pinder
