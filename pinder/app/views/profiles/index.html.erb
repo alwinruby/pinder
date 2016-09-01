@@ -6,19 +6,19 @@
       <% if @profiles.any? %>
 
         <% @profiles.each do |profile| %>
-        <%= image_tag profile.owner_image.url(:medium) %>
-        <%= profile.owner_name %>
-        <%= profile.owner_age %>
-        <%= profile.gender %>
-        <%= profile.sexual_preference %>
-        <%= profile.owner_likes %>
-        <%= profile.owner_dislikes %>
-        <%= image_tag profile.pet_image.url(:medium) %>
-        <%= profile.pet_name %>
-        <%= profile.pet_age %>
-        <%= profile.pet_species %>
-        <%= profile.pet_likes %>
-        <%= profile.pet_dislikes %>
+        <%= image_tag profile.owner_image.url(:medium) %><br><br>
+        <%= profile.owner_name %><br><br>
+        <%= profile.owner_age %><br><br>
+        <%= profile.gender %><br><br>
+        <%= profile.sexual_preference %><br><br>
+        <%= profile.owner_likes %><br><br>
+        <%= profile.owner_dislikes %><br><br>
+        <%= image_tag profile.pet_image.url(:medium) %><br><br>
+        <%= profile.pet_name %><br><br>
+        <%= profile.pet_age %><br><br>
+        <%= profile.pet_species %><br><br>
+        <%= profile.pet_likes %><br><br>
+        <%= profile.pet_dislikes %><br><br>
         <% end %>
 
       <% end %>
