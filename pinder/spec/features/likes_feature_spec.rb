@@ -26,7 +26,6 @@ feature "Like button" do
       sign_up
       create_profile
       click_button "Like"
-      click_button 'Like!'
       expect(page).to have_content("Joe")
     end
 
@@ -34,10 +33,8 @@ feature "Like button" do
       sign_up
       create_profile
       click_button "Like"
-      click_button 'Like!'
-      click_button "Like"
-      click_button 'Like!'
-      expect(page).to have_content("Dave")
+      click_button 'Like'
+      expect(page).to have_content("Buddy")
     end
   end
 end
