@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160831163657) do
-=======
-ActiveRecord::Schema.define(version: 20160831150607) do
->>>>>>> dbcd2019dd364b53ae5f9cdede7ddc6d0718ee55
+ActiveRecord::Schema.define(version: 20160901114724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +23,15 @@ ActiveRecord::Schema.define(version: 20160831150607) do
   end
 
   add_index "likes", ["profile_id"], name: "index_likes_on_profile_id", using: :btree
+
+  create_table "owner_likes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "likes"
+    t.integer  "profile_id"
+  end
+
+  add_index "owner_likes", ["profile_id"], name: "index_owner_likes_on_profile_id", using: :btree
 
   create_table "profiles", force: :cascade do |t|
     t.string   "owner_name"
@@ -80,6 +85,7 @@ ActiveRecord::Schema.define(version: 20160831150607) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "likes", "profiles"
+  add_foreign_key "owner_likes", "profiles"
   add_foreign_key "profiles", "likes"
   add_foreign_key "profiles", "users"
   add_foreign_key "users", "profiles"
