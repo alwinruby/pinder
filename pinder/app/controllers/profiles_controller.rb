@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
 
   def index
-    @profiles = Profile.all
+    @profiles = Profile.all.to_a
   end
 
   def new
@@ -13,17 +13,18 @@ class ProfilesController < ApplicationController
   def create
     @user = current_user
     @profile = Profile.create(profile_params)
-    if @profile.save
-      @user.update({ :profile_id => @profile.id })
-      redirect_to '/profiles'
-    else
-      render 'new'
-    end
+    @user.update({ :profile_id => @profile.id })
+    @profile.update({ :user_id => @user.id })
+    redirect_to '/profiles'
   end
 
   def show
     @profile = Profile.find(params[:id])
     @profiles = Profile.all.to_a
+  end
+
+  def update
+
   end
 
   private
