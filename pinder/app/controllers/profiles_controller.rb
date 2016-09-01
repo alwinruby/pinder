@@ -3,6 +3,9 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
 
   def index
+    if !session[:profile_index]
+      session[:profile_index] = 0
+    end
     @profiles = Profile.all.to_a
   end
 
@@ -24,7 +27,8 @@ class ProfilesController < ApplicationController
   end
 
   def update
-
+    session[:profile_index] += 1
+    redirect_to '/'
   end
 
   private

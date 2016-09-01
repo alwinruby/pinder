@@ -4,11 +4,12 @@
     <%= link_to "Create Profile", new_profile_path %><br>
     <% else %>
     <br><br>
-    <%= image_tag @profiles[0].pet_image.url(:medium) %><br><br>
-    <%= @profiles[0].pet_name %>
-    <%= @profiles[0].pet_age %>
-    <%= "Likes: #{@profiles[0].likes.count}" %>
+    <%= image_tag @profiles[session[:profile_index]].pet_image.url(:medium) %><br><br>
+    <%= @profiles[session[:profile_index]].pet_name %>
+    <%= @profiles[session[:profile_index]].pet_age %>
+    <%= "Likes: #{@profiles[session[:profile_index]].likes.count}" %>
     <%= button_to "Like", profile_path(@profiles), method: :get %>
+    <%= button_to "Dislike", profile_path(@profiles), method: :put %>
     <!-- <%= link_to "Play", profile_path(@profiles), method: :get %> -->
       <!-- <% if @profiles.any? %>
 
