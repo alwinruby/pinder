@@ -13,8 +13,12 @@ class ProfilesController < ApplicationController
   def create
     @user = current_user
     @profile = Profile.create(profile_params)
-    @user.update({ :profile_id => @profile.id })
-    redirect_to '/profiles'
+    if @profile.save
+      @user.update({ :profile_id => @profile.id })
+      redirect_to '/profiles'
+    else
+      render 'new'
+    end
   end
 
   def show

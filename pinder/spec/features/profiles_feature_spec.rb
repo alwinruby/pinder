@@ -15,7 +15,6 @@ feature "Profile creation" do
       expect(current_path).to eq('/profiles/new')
     end
 
-
     scenario "A user can fill out the profile form" do
       sign_up
       visit '/profiles'
@@ -74,4 +73,14 @@ feature "Playing pinder" do
       expect(page).not_to have_content 'Bob'
     end
   end
+
+  context 'user profile should be complete to validate' do
+    scenario 'user should not be create new profile with nothing filled in' do
+      sign_up
+      click_link 'Create Profile'
+      click_button 'Submit Profile'
+      expect(page).to have_content 'error'
+    end
+  end
+
 end
