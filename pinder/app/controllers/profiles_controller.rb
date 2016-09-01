@@ -4,7 +4,7 @@ class ProfilesController < ApplicationController
 
   def index
     @profiles = Profile.all.to_a
-    
+
   end
 
   def new
@@ -20,8 +20,9 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @profile = Profile.find(params[:id])
-    @profiles = Profile.all.to_a
+    @profile = Profile.all.to_a
+    # @profile = Profile.find(params[:id])
+    # @profiles = Profile.all.to_a
   end
 
   private

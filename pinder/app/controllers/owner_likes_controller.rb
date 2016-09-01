@@ -1,0 +1,2 @@
+class OwnerLikesController < ApplicationController
+end

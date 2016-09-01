@@ -8,7 +8,8 @@
     <%= @profiles[0].pet_name %>
     <%= @profiles[0].pet_age %>
     <%= "Likes: #{@profiles[0].likes.count}" %>
-    <%= link_to "Play", profile_path(@profiles), method: :get %>
+    <%= button_to "Like", new_profile_like_path(@profiles), method: :get %>
+    <!-- <%= link_to "Play", profile_path(@profiles), method: :get %> -->
       <!-- <% if @profiles.any? %>
 
         <% @profiles.each do |profile| %>
