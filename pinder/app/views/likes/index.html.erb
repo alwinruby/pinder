@@ -1,16 +1,34 @@
-<%= image_tag @profiles[session[:profile_index]].owner_image.url(:medium) %><br><br>
-<%= @profiles[session[:profile_index]].owner_name %>
-<%= @profiles[session[:profile_index]].owner_age %>
-<%= @profiles[session[:profile_index]].gender %>
-<%= @profiles[session[:profile_index]].sexual_preference %>
-<%= @profiles[session[:profile_index]].owner_likes %>
-<%= @profiles[session[:profile_index]].owner_dislikes %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="main">
+      <section class="more">
+        <%= button_to "Like to see more?", profiles_path, method: :get, :class => "button_more" %>
+      </section>
+    <section class="owner">
+    <%= image_tag @profiles[session[:profile_index]].owner_image.url(:medium) %><br><br>
+  </section>
+  <section class="middle">
+    <b>Owner Name: </b><%= @profiles[session[:profile_index]].owner_name %><br><br>
+    <b>Owner Age: </b><%= @profiles[session[:profile_index]].owner_age %><br><br>
+    <b>Gender: </b><%= @profiles[session[:profile_index]].gender %><br><br>
+    <b>Sexual Preference: </b><%= @profiles[session[:profile_index]].sexual_preference %><br><br>
+    <b>Owner Likes: </b><%= @profiles[session[:profile_index]].owner_likes %><br><br>
+    <b>Owner Dislikes: </b><%= @profiles[session[:profile_index]].owner_dislikes %><br><br>
 
-<%= image_tag @profiles[session[:profile_index]].pet_image.url(:medium) %><br><br>
-<%= @profiles[session[:profile_index]].pet_name %>
-<%= @profiles[session[:profile_index]].pet_age %>
-<%= @profiles[session[:profile_index]].pet_species %>
-<%= @profiles[session[:profile_index]].pet_likes %>
-<%= @profiles[session[:profile_index]].pet_dislikes %>
-
-<%= button_to "Like to see more?", profiles_path, method: :get %>
+    <b>Pet Name: </b><%= @profiles[session[:profile_index]].pet_name %><br><br>
+    <b>Pet Age: </b><%= @profiles[session[:profile_index]].pet_age %><br><br>
+    <b>Species: </b><%= @profiles[session[:profile_index]].pet_species %><br><br>
+    <b>Pet Likes: </b><%= @profiles[session[:profile_index]].pet_likes %><br><br>
+    <b>Pet Dislikes: </b><%= @profiles[session[:profile_index]].pet_dislikes %><br>
+  </section>
+  <section class="pet">
+    <%= image_tag @profiles[session[:profile_index]].pet_image.url(:medium) %>
+  </section>
+  </div>
+  </body>
+</html>

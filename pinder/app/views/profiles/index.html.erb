@@ -12,13 +12,17 @@
     <br><br>
     <%= link_to "Create Profile", new_profile_path %><br>
     <% else %>
-    <br><br>
-    <%= image_tag @profiles[session[:profile_index]].pet_image.url(:medium) %><br><br>
-    Name: <%= @profiles[session[:profile_index]].pet_name %>
-    Age: <%= @profiles[session[:profile_index]].pet_age %>
-    <br><br>
-    <span class="like"><%= button_to "Like", profile_path(@profiles), method: :get %></span>
-    <span class="dislike"><%= button_to "Dislike", profile_path(@profiles), method: :put %></span>
+    <section class="like">
+      <%= button_to "WOOF WOOF",  profile_path(@profiles), method: :get, :class => "button_like" %>
+    </section>
+    <section class="details">
+    <b>Name:</b> <%= @profiles[session[:profile_index]].pet_name %>
+    <b>Age:</b> <%= @profiles[session[:profile_index]].pet_age %><br><br>
+    <%= image_tag @profiles[session[:profile_index]].pet_image.url(:medium) %>
+  </section>
+  <section class="dislike">
+    <%= button_to "DOWN BOY", profile_path(@profiles), method: :put, :class => "button_dislike" %>
+  </section>
     <% end %>
     <% else %>
     Please sign up or sign in to use Pinder

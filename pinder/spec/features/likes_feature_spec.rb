@@ -11,23 +11,23 @@ feature "Like button" do
     scenario "A user likes another user's pet" do
       sign_up
       create_profile
-      click_button "Like"
+      click_button "WOOF WOOF"
       expect(page).to have_content("Joe")
     end
 
     scenario "A user likes another user's photo" do
       sign_up
       create_profile
-      click_button "Like"
-      click_button 'Like'
+      click_button "WOOF WOOF"
+      click_button 'HUBBA HUBBA'
       expect(page).to have_content("Buddy")
     end
 
     scenario "User can see full profiles when both like buttons clicked" do
       sign_up
       create_profile
-      click_button "Like"
-      click_button 'Like'
+      click_button "WOOF WOOF"
+      click_button 'HUBBA HUBBA'
       expect(page).to have_content 'Football'
     end
   end
@@ -44,7 +44,7 @@ feature "Dislike button" do
     scenario "A user dislikes another user's pet" do
       sign_up
       create_profile
-      click_button "Dislike"
+      click_button "DOWN BOY"
       expect(page).to have_content "Dave"
     end
   end

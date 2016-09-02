@@ -1,3 +1,105 @@
 // Place all the styles related to the likes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  font-family: Tahoma, Geneva, sans-serif
+}
+
+#main {
+  font-size: 10px;
+  padding-top: 20px;
+}
+
+#owner {
+  text-align: left;
+  padding-left: 400px;
+  position: relative;
+  float: left;
+}
+
+#pet {
+  padding-left: 100px;
+  position: relative;
+  float: left;
+  text-align: left;
+}
+
+#submit {
+  padding-top: 30px;
+  clear: left;
+}
+
+.button_like {
+  background-color: #4CAF50;
+  border: 2px solid grey;
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 200px;
+  text-align: center;
+  display: inline-block;
+  padding: 10px 10px 10px 10px;
+}
+
+.button_dislike {
+  background-color: #f44336;
+  border: 2px solid grey;
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 150px;
+  display: inline-block;
+  padding: 10px 10px 10px 10px;
+}
+
+.button_more {
+  background: #7474BF; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #7474BF , #348AC7); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #7474BF , #348AC7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: 2px solid grey;
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 230px;
+  display: inline-block;
+  padding: 10px 10px 10px 10px;
+}
+
+// border: none;
+//     color: white;
+//     padding: 15px 32px;
+//     text-align: center;
+//     text-decoration: none;
+//     display: inline-block;
+//     font-size: 16px;
+
+.links {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.owner {
+  float: left;
+  padding-left: 150px;
+  padding-top: 50px;
+    // padding-left: 100px;
+}
+
+.middle {
+  font-size: 18px;
+  text-align: left;
+  float:left;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  // float: left;
+}
+
+.pet {
+  float: left;
+  padding-top: 50px;
+}
+
+img {
+  border: 3px solid grey;
+}
