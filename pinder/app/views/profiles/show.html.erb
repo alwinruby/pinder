@@ -1,5 +1,23 @@
-<%= image_tag @profiles[session[:profile_index]].owner_image.url(:medium) %><br><br>
-<%= @profiles[session[:profile_index]].owner_name %>
-<%= @profiles[session[:profile_index]].owner_age %>
-<%= "Likes: #{@profiles[session[:profile_index]].likes.count}" %>
-<%= button_to "Like", profile_likes_path(@profiles), method: :post %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="main">
+    <section class="like">
+      <%= button_to "HUBBA HUBBA", profile_likes_path(@profiles), method: :post, :class => "button_like" %>
+    </section>
+    <section class="details">
+    <b>Name:</b> <%= @profiles[session[:profile_index]].owner_name %>
+    <b>Age:</b> <%= @profiles[session[:profile_index]].owner_age %><br><br>
+    <%= image_tag @profiles[session[:profile_index]].owner_image.url(:medium) %><br><br>
+  </section>
+  <section class="dislike">
+    <%= button_to "No thanks", profile_path(@profiles), method: :put, :class => "button_dislike" %>
+  </section>
+</div>
+
+  </body>
+</html>

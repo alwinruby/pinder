@@ -17,23 +17,6 @@ feature "Profile creation" do
   end
 end
 feature "Playing pinder" do
-  # context "A user wants to play pinder" do
-  #   scenario "A user wants to play pinder" do
-  #     sign_up
-  #     create_profile
-  #     visit '/profiles'
-  #     click_link "Like"
-  #     expect(page).to have_content("Your name: Adam")
-  #   end
-  #
-  #   scenario "A user sees a picture of another user's pet" do
-  #     sign_up
-  #     create_profile
-  #     visit "/profiles"
-  #     click_link "Like"
-  #     expect(page).to have_css("//img[@src*='banana.jpg']")
-  #   end
-  # end
   context 'User needs to be signed in' do
     scenario 'user must be signed in to view profiles' do
       sign_up

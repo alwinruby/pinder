@@ -1,3 +1,99 @@
 // Place all the styles related to the profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body, html {
+  font-family: Tahoma, Geneva, sans-serif
+}
+
+
+#main {
+  align-content: center;
+  text-align: center;
+  font-size: 24px;
+  padding-top: 20px;
+}
+
+#owner {
+  text-align: left;
+  padding-left: 400px;
+  position: relative;
+  float: left;
+}
+
+#pet {
+  padding-left: 100px;
+  position: relative;
+  float: left;
+  text-align: left;
+}
+
+#submit {
+  padding-top: 30px;
+  clear: left;
+}
+
+.button_like {
+  background: #134E5E; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #134E5E , #71B280); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #134E5E , #71B280); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: 2px solid grey;
+  color: black;
+  font-weight: bold;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 160px;
+  text-align: center;
+  display: inline-block;
+  padding: 10px 10px 10px 10px;
+}
+
+.button_dislike {
+  background: #FF512F; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #FF512F , #DD2476); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #FF512F , #DD2476); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: 2px solid grey;
+  color: black;
+  font-weight: bold;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 150px;
+  display: inline-block;
+  padding: 10px 10px 10px 10px;
+}
+
+// border: none;
+//     color: white;
+//     padding: 15px 32px;
+//     text-align: center;
+//     text-decoration: none;
+//     display: inline-block;
+//     font-size: 16px;
+
+.links {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.like {
+    float: left;
+    padding-left: 270px;
+    padding-top: 230px;
+}
+
+.details {
+  padding-left: 10px;
+  float: left;
+}
+
+.dislike {
+  float: left;
+  padding-top: 230px;
+  padding-left: 10px;
+}
+
+
+img {
+  border: 3px solid grey;
+  width: 300px;
+  height: 400px;
+}

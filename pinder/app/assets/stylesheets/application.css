@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background: #7b4397; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #7b4397 , #dc2430); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #7b4397 , #dc2430); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#sign_in {
+  text-align: center;
+  padding-top: 20px;
+
+}
+
+.links {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.main_logo {
+  border: none;
+  width: 400px;
+  height: 150px;
+}
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+a:active {
+    color: white;
+}
