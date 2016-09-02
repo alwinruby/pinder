@@ -6,17 +6,17 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body><div id="sign_in">
   <% if user_signed_in? %>
     <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
   <% else %>
-    <%= link_to "Sign up", new_user_registration_path %>
-    <br><br>
-    <%= link_to "Sign in", new_user_session_path %>
+    <span class="links"><%= link_to "Sign up", new_user_registration_path %></span>
+    <span class="links"><%= link_to "Sign in", new_user_session_path %></span>
     <br><br>
     <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
     <br><br>
   <% end %>
+    </div>
   <!-- <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p> -->
 <%= yield %>

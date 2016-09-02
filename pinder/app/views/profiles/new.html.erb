@@ -8,7 +8,8 @@
     </ul>
   </section>
 <% end %>
-
+<div id='main'>
+<div id='owner'>
 <%= form_for @profile do |f| %>
   <%= f.label :owner_name %>:
   <%= f.text_field :owner_name %><br><br>
@@ -24,6 +25,8 @@
   <%= f.text_field :owner_dislikes %><br><br>
   <%= f.label :owner_image %>
   <%= f.file_field :owner_image %><br><br>
+</div>
+<div id='pet'>
   <%= f.label :pet_name %>:
   <%= f.text_field :pet_name %><br><br>
   <%= f.label :pet_age %>:
@@ -36,5 +39,9 @@
   <%= f.text_field :pet_dislikes %><br><br>
   <%= f.label :pet_image %>
   <%= f.file_field :pet_image %><br><br>
+</div>
+<div id='submit'>
   <%= f.submit "Submit Profile" %>
+</div>
+</div>
 <% end %>

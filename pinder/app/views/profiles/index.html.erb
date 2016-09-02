@@ -1,37 +1,28 @@
-<% if user_signed_in? %>
-  <% if current_user.profile_id == nil %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="main">
+    <% if user_signed_in? %>
+    <% if current_user.profile_id == nil %>
     You don't yet have a profile
+    <br><br>
     <%= link_to "Create Profile", new_profile_path %><br>
     <% else %>
     <br><br>
     <%= image_tag @profiles[session[:profile_index]].pet_image.url(:medium) %><br><br>
-    <%= @profiles[session[:profile_index]].pet_name %>
-    <%= @profiles[session[:profile_index]].pet_age %>
-    <%= "Likes: #{@profiles[session[:profile_index]].likes.count}" %>
-    <%= button_to "Like", profile_path(@profiles), method: :get %>
-    <%= button_to "Dislike", profile_path(@profiles), method: :put %>
-    <!-- <%= link_to "Play", profile_path(@profiles), method: :get %> -->
-      <!-- <% if @profiles.any? %>
-
-        <% @profiles.each do |profile| %>
-        <%= image_tag profile.owner_image.url(:medium) %><br><br>
-        <%= profile.owner_name %><br><br>
-        <%= profile.owner_age %><br><br>
-        <%= profile.gender %><br><br>
-        <%= profile.sexual_preference %><br><br>
-        <%= profile.owner_likes %><br><br>
-        <%= profile.owner_dislikes %><br><br>
-        <%= image_tag profile.pet_image.url(:medium) %><br><br>
-        <%= profile.pet_name %><br><br>
-        <%= profile.pet_age %><br><br>
-        <%= profile.pet_species %><br><br>
-        <%= profile.pet_likes %><br><br>
-        <%= profile.pet_dislikes %><br><br>
-        <%= "Likes: #{profile.likes.count}" %>
-        <%= link_to "Play", profile_path(profile), method: :get %>
-      <% end %>
-    <% end %> -->
-  <% end %>
-<% else %>
-  Please sign up or sign in to use Pinder
-<% end %>
+    Name: <%= @profiles[session[:profile_index]].pet_name %>
+    Age: <%= @profiles[session[:profile_index]].pet_age %>
+    <br><br>
+    <span class="like"><%= button_to "Like", profile_path(@profiles), method: :get %></span>
+    <span class="dislike"><%= button_to "Dislike", profile_path(@profiles), method: :put %></span>
+    <% end %>
+    <% else %>
+    Please sign up or sign in to use Pinder
+    <% end %>
+    </div>
+  </body>
+</html>

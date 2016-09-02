@@ -1,3 +1,44 @@
 // Place all the styles related to the profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#main {
+  text-align: center;
+  padding-top: 80px;
+}
+
+#owner {
+  text-align: left;
+  padding-left: 400px;
+  position: relative;
+  float: left;
+}
+
+#pet {
+  padding-left: 100px;
+  position: relative;
+  float: left;
+  text-align: left;
+}
+
+#submit {
+  padding-top: 30px;
+  clear: left;
+}
+
+.button {
+  font-size: 300px;
+}
+
+.links {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.like {
+    float: left;
+}
+
+.dislike {
+  float: left;
+}
