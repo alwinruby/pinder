@@ -22,6 +22,14 @@ feature "Like button" do
       click_button 'Like'
       expect(page).to have_content("Buddy")
     end
+
+    scenario "User can see full profiles when both like buttons clicked" do
+      sign_up
+      create_profile
+      click_button "Like"
+      click_button 'Like'
+      expect(page).to have_content 'Football'
+    end
   end
 end
 
@@ -37,7 +45,7 @@ feature "Dislike button" do
       sign_up
       create_profile
       click_button "Dislike"
-      expect(page).to have_content "Dave" 
+      expect(page).to have_content "Dave"
     end
   end
 end

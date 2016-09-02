@@ -1,5 +1,9 @@
 class LikesController < ApplicationController
 
+  def index
+    @profiles = Profile.all.to_a
+  end
+
   def new
     @profile = Profile.find(params[:profile_id])
     @like = @profile.likes.new
@@ -8,7 +12,7 @@ class LikesController < ApplicationController
   def create
     @profile = Profile.find(params[:profile_id])
     @profile.likes.create
-    redirect_to '/'
+    redirect_to profile_likes_path
   end
 
 end
