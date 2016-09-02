@@ -3,6 +3,9 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
 
   def index
+    if !session[:profile_index]
+      session[:profile_index] = 0
+    end
     @profiles = Profile.all.to_a
   end
 
@@ -13,9 +16,13 @@ class ProfilesController < ApplicationController
   def create
     @user = current_user
     @profile = Profile.create(profile_params)
-    @user.update({ :profile_id => @profile.id })
-    @profile.update({ :user_id => @user.id })
-    redirect_to '/profiles'
+    if @profile.save
+      @user.update({ :profile_id => @profile.id })
+      @profile.update({ :user_id => @user.id })
+      redirect_to '/profiles'
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -24,7 +31,8 @@ class ProfilesController < ApplicationController
   end
 
   def update
-
+    session[:profile_index] += 1
+    redirect_to '/'
   end
 
   private
